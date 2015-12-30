@@ -1,0 +1,280 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+.hidden {
+  display: none;
+}
+body {
+  background-color: black;
+  background: url(img/coruscant.jpg) bottom center no-repeat;
+  background-size: cover!important;
+  color: white;
+  text-shadow: 0px 0px 3px black;
+  font-size: 12px;
+  font-family: Montserrat;
+  overflow: hidden;
+}
+li {
+  list-style: none;
+}
+
+/* OVERLAY (GAME START SCREEN) */
+#overlay,
+#wrapper {
+  padding: 40px;
+}
+#overlay {
+  background-color: rgba(0,0,0,0.7);
+}
+.overlay-logo {
+  text-align: center;
+}
+.overlay-logo img {
+  width: 200px;
+}
+.overlay-logo h1 {
+  margin-top: 5px;
+  font-size: 3em;
+}
+.team-select {
+  max-width: 700px;
+  margin: 10px auto;
+  text-align: center;
+}
+.team-select h2 {
+  padding: 10px;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  margin-bottom: 20px;
+  color: gray;
+}
+.team-select li {
+  display: inline-block;
+  margin: 10px 40px;
+  width: 250px;
+}
+#empire-logo img,
+#rebel-logo img {
+  box-shadow: 0 0 10px #777; 
+}
+#empire-logo img {
+  border-radius: 100%;
+  margin-bottom: 20px;
+}
+#empire-logo img:hover { box-shadow: 0 0 30px red; }
+#rebel-logo img {
+  border-radius: 100%;
+  margin-bottom: 20px;
+}
+#rebel-logo img:hover { box-shadow: 0 0 30px #01befe; }
+
+.team-select li h3 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+.team-select li h4 {
+  font-size: 1.5em;
+  color: #777;
+  font-weight: normal;
+}
+
+/* Logo */
+#logo {
+  margin-bottom: 20px;
+  height: 60px;
+}
+#logo img {
+  width: 80px;
+  float: left;
+  margin-right: 15px;
+}
+#gameid {
+  height: 40px;
+  width: 40px!important;
+  margin: auto 0;
+}
+#logo p {
+  font-size: 2em;
+  margin-top: 5px;
+  display: inline-block;
+}
+.button {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  background: #bababa;
+  text-shadow: none;
+  box-shadow: 0 0 3px #777;
+  border: 1px solid #777; 
+  font-size: 0.75em!important;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  vertical-align: bottom;
+}
+.button:hover {
+  background: #ddd;
+  cursor: pointer;
+  box-shadow: 0 0 5px black;
+}
+#line {
+  border-top: 2px solid white;
+  box-shadow: 0px 0px 2px black;
+  width: 100%;
+  display: inline-block;
+}
+#title {
+  position: absolute;
+  top: -8px;
+  left: 80px;
+  font-size: 1.5em;
+}
+#clock {
+  position: absolute;
+  left: 49%;
+  top: 0;
+  padding: 5px 10px;
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: rgba(0,0,0,0.3);
+}
+#stats {
+  position: absolute;
+  top: 30px;
+  right: 0;
+}
+#stats li {
+  display: inline-block;
+  margin-left: 10px;
+}
+#legend {
+  position: absolute;
+  right: 0;
+  padding: 20px;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: rgba(0,0,0,0.3);
+}
+#legend li {
+  padding: 3px 0;
+}
+#legend span {
+  display: inline-block;
+  width: 85px;
+}
+
+/* Nav */
+header {
+  clear: both;
+}
+nav {
+  width: 170px;
+}
+nav p {
+  font-size: 1.3em;
+  padding-bottom: 5px;
+}
+#location li {
+  width: 80px;
+  padding: 5px 0;
+  margin-right: 5px;
+  color: #dadada;
+  display: block;
+  text-align: center;
+}
+#location span {
+  text-align: center;
+  display: block;
+  position: absolute;
+  z-index: 3;
+  width: 80px;
+  height: 60px;
+  padding-top: 22px;
+  background-color: rgba( 60,60,60,0.7 );
+  opacity: 0;
+}
+#location span:hover,
+#location li:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+#location img {
+  width: 100%;
+  height: 60px;
+  border: 2px solid #ffffff;
+  opacity: 0.8;
+}
+/* Scoreboard */
+#scoreboard {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  font-size: 1.3em;
+}
+#scoreboard p {
+  display: inline-block;
+}
+#kills {
+  margin-right: 20px;
+}
+#points {
+  color: red;
+  margin-right: 50px;
+}
+
+/* Playing Area */
+#playing-area {
+  position: absolute;
+  bottom: 50px;
+  right: 40px;
+  /* border: 1px solid; */
+  cursor: url(img/crosshairs.jpg), auto;
+}
+#playing-area img {
+  max-width: 200px;
+  max-height: 300px;
+  position: absolute;
+  vertical-align: bottom;
+  bottom: -300px;
+}
+@keyframes nudge {
+  0%, 100% { transform: translate(100px, 0); }
+  50% { transform: translate(300px, 0); }
+  80% { transform: translate(-100px, 0); }
+}
+
+#actor1 {
+  left: 5%;
+  animation: nudge 5s linear infinite alternate;
+}
+#actor2 {
+  left: 15%;
+  animation: nudge 4.5s linear infinite alternate;
+}
+#actor3 {
+  left: 30%;
+  animation: nudge 4s linear infinite alternate;
+}
+#actor4 {
+  left: 45%;
+  animation: nudge 3.5s linear infinite alternate;
+}
+#actor5 {
+  left: 55%;
+  animation: nudge 3s linear infinite alternate;
+}
+
+
+/* Footer */
+footer {
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 20px;
+  text-align: center;
+  width: 100%;
+}
